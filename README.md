@@ -25,34 +25,44 @@ Can meaningful and measurable interaction-level patterns be discovered from shor
   5) recommendation  
   6) planning  
   7) creative  
-  8) math
+  8) math  
+
 - Generator families (5) per intent:
-  - `direct`, `polite`, `contextual`, `constraint_heavy`, `noisy`
+  - `direct`
+  - `polite`
+  - `contextual`
+  - `constraint_heavy`
+  - `noisy`
+
 - Messages per (intent, generator): **60**
 - Perturbations:
-  - Apply **exactly 3** per message (category-agnostic) to simulate real-world noise.
+  - Apply **exactly 3** category-agnostic perturbations per message to simulate realistic user noise.
 
 ### Generator-aware split
+
 - `train_gen`: `direct`, `polite`, `contextual`
 - `test_gen`: `constraint_heavy`, `noisy`
 
-This enables evaluating clustering robustness to **unseen prompt/template families**.
+This split enables evaluating whether clustering structure and quality persist under **unseen template / prompt families**.
 
 ---
 
 ## Repository structure
 
+```text
 interaction-clustering/
 ├── data/
-│ ├── raw/ # generated messages.csv
-│ └── processed/ # reserved for downstream artifacts
+│   ├── raw/                 # generated messages.csv
+│   └── processed/           # reserved for downstream artifacts
 ├── generation/
-│ ├── templates.py
-│ ├── slot_pools.py
-│ ├── perturbations.py
-│ ├── check_slots.py
-│ ├── generate_dataset.py
-│ └── sanity_report.py
+│   ├── templates.py
+│   ├── slot_pools.py
+│   ├── perturbations.py
+│   ├── check_slots.py
+│   ├── generate_dataset.py
+│   └── sanity_report.py
 ├── experiments/
-│ └── clustering.ipynb # (next) embeddings + KMeans/HDBSCAN + eval
-└── results/ # figures/tables (next)
+│   └── clustering.ipynb     # embeddings + KMeans/HDBSCAN + evaluation
+└── results/
+    └── figures_tables/      # plots and tables (generated later)```
+
