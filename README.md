@@ -1,6 +1,6 @@
-# interaction-clustering — Generator-aware intent pattern discovery (pilot)
+# interaction-clustering: Generator-aware intent pattern discovery (pilot)
 
-Publication-ready micro-study (2–3 weeks) testing whether **short, single-turn user messages** can be grouped into **interaction-level patterns** using **one embedding model + unsupervised clustering**.
+Micro-study testing whether **short, single-turn user messages** can be grouped into **interaction-level patterns** using **one embedding model + unsupervised clustering**.
 
 **Key contribution:** *generator-aware evaluation*  
 We explicitly test whether clustering quality and structure remain stable under **unseen template families**, probing **template leakage** in synthetic datasets.
