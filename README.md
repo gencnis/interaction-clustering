@@ -42,3 +42,17 @@ This enables evaluating clustering robustness to **unseen prompt/template famili
 
 ## Repository structure
 
+interaction-clustering/
+├── data/
+│ ├── raw/ # generated messages.csv
+│ └── processed/ # reserved for downstream artifacts
+├── generation/
+│ ├── templates.py
+│ ├── slot_pools.py
+│ ├── perturbations.py
+│ ├── check_slots.py
+│ ├── generate_dataset.py
+│ └── sanity_report.py
+├── experiments/
+│ └── clustering.ipynb # (next) embeddings + KMeans/HDBSCAN + eval
+└── results/ # figures/tables (next)
